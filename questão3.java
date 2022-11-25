@@ -1,5 +1,5 @@
 package aula07_11;
-
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class questão3 {
@@ -7,31 +7,24 @@ public class questão3 {
 		Scanner in = new Scanner(System.in);
 
 		int quantiaNumeros;
-		int contador2=1;
-		int numerosEmOrdem[] = new int[10];
-
+		int a = 0;
 		System.out.println("Informe quantos números você deseja: ");
 		quantiaNumeros = in.nextInt();
 
-		int numeros[] = new int[quantiaNumeros];
+		int numero[] = new int[quantiaNumeros];
+		int EmOrdem[] = new int[quantiaNumeros];
 
-		for (int contador = 0; contador < quantiaNumeros; contador++) {
+		for (int c = 0; c < quantiaNumeros; c++) {
 			System.out.print("Informe um número inteiro: ");
-			numeros[contador] = in.nextInt();
+			numero[c] = in.nextInt();
 		}
-		for (int contador = 0; contador < quantiaNumeros; contador++) {
-			if (contador == 0) {
-				numerosEmOrdem[contador] = numeros[contador];
-			} else if (contador > 0) {
-				if (numerosEmOrdem[contador] > numerosEmOrdem[contador - contador2]) {
-					numerosEmOrdem[contador] = numeros[contador];
-					contador2++;
-				}
-			}
-		}
-		for (int contador = 0; contador < quantiaNumeros; contador++) {
 
-			System.out.println("Em ordem crescente: \n" + numerosEmOrdem[contador]);
-		}
+			Arrays.sort(numero);
+			
+			
+			System.out.println("\nEm ordem crescente\n");
+			for (int x=0;x<quantiaNumeros;x++) {
+				System.out.println(numero[x]);
+			}
 	}
 }
